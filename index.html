@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Judika Professional</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="court-name">Landesgericht Falkenheim – Modell</div>
+      <nav class="topbar-nav">
+        <a href="#organisation">Organisation</a>
+        <a href="#rechtsprechung">Rechtsprechung</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <section class="card">
+          <h2>Judika Professional</h2>
+          <p class="subtitle">
+            Assistenzsystem für das Modell-Landesgericht Falkenheim.
+          </p>
+          <ul class="badge-list">
+            <li class="badge">Modellrecht</li>
+            <li class="badge">Nicht verbindlich</li>
+            <li class="badge">Nur Testumgebung</li>
+          </ul>
+        </section>
+
+        <section class="card warning">
+          <h2>Wichtiger Hinweis</h2>
+          <p class="small">
+            Die Verwendung der Judika Professional ersetzt keine gültige
+            Rechtssprechung. Weitere Details finden Sie im § 34 StPO.
+          </p>
+        </section>
+
+        <section class="card law-link">
+          <h2>Gesetzesgrundlage</h2>
+          <p>
+            Judika Professional arbeitet ausschließlich mit den hinterlegten
+            Gesetzestexten (z.&nbsp;B. GG, StGB, StPO) im Modellrahmen.
+          </p>
+          <p>
+            Für reale Verfahren und verbindliche Auskünfte wenden Sie sich an
+            eine zugelassene Rechtsanwältin oder einen Rechtsanwalt.
+          </p>
+        </section>
+      </aside>
+
+      <section class="chat-area">
+        <header class="chat-header">
+          <div>
+            <h1>Judika Professional – Auskunftssystem</h1>
+            <p class="subtitle">
+              Stellen Sie Fragen zu den hinterlegten Gesetzestexten im
+              Modell-Landesgericht Falkenheim.
+            </p>
+          </div>
+        </header>
+
+        <div id="chat-log" class="chat-log"></div>
+
+        <form id="chat-form" class="chat-form">
+          <input
+            id="chat-input"
+            type="text"
+            placeholder="Ihre Frage an Judika Professional …"
+            autocomplete="off"
+          />
+          <button type="submit">Senden</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Dummy-Anker für die Navigation -->
+    <section id="organisation"></section>
+    <section id="rechtsprechung"></section>
+    <section id="kontakt"></section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
