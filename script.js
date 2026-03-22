@@ -92,13 +92,31 @@ function handleUserQuestion(question) {
     }
   }
 
-  // Platzhalter-Antwort – hier würde später die echte KI-/Gesetzeslogik andocken
-  appendMessage(
-    "Judika Professional",
-    "Dies ist eine Platzhalterantwort. In einer erweiterten Version würde Judika Professional nun relevante Gesetzesstellen aus den hinterlegten PDFs abrufen und auf dieser Basis antworten.",
-    "judika"
-  );
+async function handleUserQuestion(question) {
+  const response = await fetch("/frage", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ frage: question })
+  });
+
+  const data = await response.json();
+
+  if (data.antworten.length === 0) {
+    appendMessage(
+      "Judika Professional",
+      "Ich konnte keinen passenden Paragraphen finden. Bitte beachten Sie: Die Verwendung der Judika Professional ersetzt keine gültige Rechtssprechung. Weitere Details finden Sie im § 34 StPO."
+    );
+    return;
+  }
+
+  for (const treffer of data.antworten) {
+    appendMessage(
+      "Judika Professional",
+      `${treffer.gesetz} – § ${treffer.paragraf}\n\n${treffer.text}`
+    );
+  }
 }
+
 
 chatForm.addEventListener("submit", (event) => {
   event.preventDefault();
